@@ -89,7 +89,7 @@ fn run_on_file(allocator: std.mem.Allocator, path: []const u8) u64 {
 
     var sum: u64 = 0;
 
-    var iter = std.mem.split(u8, text, "\n");
+    var iter = std.mem.splitSequence(u8, text, "\n");
 
     while (iter.next()) |line| {
         const numbers = get_line_numbers(allocator, line);
